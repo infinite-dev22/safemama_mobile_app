@@ -1,0 +1,239 @@
+<resources>
+    <string name="app_name">Petograph</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="tab_checkup">CHECKUP</string>
+    <string name="tab_charts">CHARTS</string>
+    <string name="tab_reviews">REVIEWS</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_submit">Submit</string>
+
+    <string name="menu_danger_signs">Danger Signs</string>
+    <string name="menu_website">Website</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_about">About</string>
+    <string name="toolbar_title_about">About</string>
+    <string name="toolbar_title_settings">Settings</string>
+    <string name="toolbar_title_danger_signs">Danger Signs</string>
+    <string name="toolbar_title_add_record">Add Record</string>
+
+    <string name="large_text">"Petograph application enables early detection of pre-eclampsia and ensures timely referral to appropriate health care provider. For prompt intervention through effective management and efficient follow up.
+     "<u><b>Inventor</b></u>"
+         Suleiman Abubakar Tsamiya
+         Department of Obstetrics and Gynaecology
+         Kampala International University,
+         Western Campus, Uganda
+         suleiman.tsamiya@stud.kiu.ac.ug
+         tsamiyaonline@gmail.com
+         +256-705265828
+         +256-786359884
+     "<u><b>Software Developer</b></u>"
+         Jonathan Mark Mwigo
+         Infinite Software
+         Kampala, Uganda
+         mwigojm@gmail.com
+         mwigojm@outlook.com
+         +256752092370
+         +256786998051
+     "<u><b>Website</b></u>"
+         https://globalpreeclampsia.org/"</string>
+
+    <string name="DiastolicBP">Diastolic</string>
+    <string name="Pulse">Pulse Rate</string>
+    <string name="Respiration">Respiratory Rate</string>
+    <string name="SystolicBP">Systolic</string>
+    <string name="_00">0</string>
+    <string name="about">About</string>
+    <string name="add_vitals">Add your vital signs from here. They will be used to check for Preeclampsia</string>
+    <string name="appwidget_text">Petograph BP</string>
+    <string name="blood_pressure">Blood Pressure</string>
+    <string name="bmi">Body Mass Index</string>
+    <string name="bmiWarn">Add Values to get Body Mass Index</string>
+    <string name="bodyswelling">Body swelling</string>
+    <string name="breath">Shortness of breath(Dyspnoea)</string>
+    <string name="calendar">Calendars</string>
+    <string name="calendar_calc">Menstrual calendar and BMI calculator are here</string>
+    <string name="cancel">Cancel</string>
+    <string name="charts">charts</string>
+    <string name="checkup">Checkup</string>
+    <string name="conscious">Loss of consciousness</string>
+    <string name="danger">Danger Signs</string>
+    <string name="data_cleared">Data Cleared, Restart the App</string>
+    <string name="data_saved">Data saved</string>
+    <string name="date">Date</string>
+    <string name="days">days</string>
+    <string name="diarrhoea">Diarrhoea</string>
+    <string name="dizziness">Dizziness</string>
+    <string name="duration_of_menstrual_cycle">Duration of Menstrual cycle</string>
+    <string name="easy">"IT'S EASY TO USE"</string>
+    <string name="edate">Expected Date of Delivery</string>
+    <string name="edd">expected date</string>
+    <string name="empty_graph">Add some Values to see a graph here</string>
+    <string name="enter_date">Please enter a past or current date</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_value_large">Large value entered</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="errors">Some Errors occurred</string>
+    <string name="expect_on">Expect on</string>
+    <string name="feb">February</string>
+    <string name="fertility">Menstrual Calendar</string>
+    <string name="filter_title_petograph">Visit Petograph</string>
+    <string name="first_value">Reached First Value</string>
+    <string name="got_it">GOT IT</string>
+    <string name="headache">Severe Headache</string>
+    <string name="heartbeat">Increased heartbeat(Palpitation)</string>
+    <string name="height">Height</string>
+    <string name="heightHint">Height(cm)</string>
+    <string name="highBp">High</string>
+    <string name="highBPC">High blood pressure! Consult a Doctor</string>
+    <string name="last_value">Reached Last Value</string>
+    <string name="left">left</string>
+    <string name="lnmp">Last Normal Menstrual period</string>
+    <string name="menstrual">Menstrual Cycle</string>
+    <string name="mmhg">mmHg</string>
+    <string name="most">Most Fertile</string>
+    <string name="name">00</string>
+    <string name="next_cycle">Next Cycle begins on</string>
+    <string name="no_selection">No selection</string>
+    <string name="normalBp">Normal</string>
+    <string name="not_pregnant">You are not pregnant</string>
+    <string name="ovulate">Ovulation day</string>
+    <string name="pain">Heartburns(Epigastic pain)</string>
+    <string name="permission_rationale">Contacts permissions are needed for providing email completions.</string>
+    <string name="pref_default_display_name">John Smith</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact based on your message history</string>
+    <string name="pref_header_data_sync">Data + sync</string>
+    <string name="pref_header_general">General</string>
+    <string name="pref_header_notifications">Notifications</string>
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="pregnancy">Pregnancy</string>
+    <string name="pregnant">pregnant</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="protein">Protein Value</string>
+    <string name="reviews">reviews</string>
+    <string name="right">right</string>
+    <string name="safe1">Safe Period 1</string>
+    <string name="safe2">Safe Period 2</string>
+    <string name="safe_days">Safe Days</string>
+    <string name="scroll">Scroll through stored values</string>
+    <string name="settings">Settings</string>
+    <string name="share">Share</string>
+    <string name="slash">/</string>
+    <string name="start_date_of_last_menstrual_cycle">Start date of last Menstrual cycle</string>
+    <string name="submit">Submit</string>
+    <string name="suspect">Suspected case of Pre-eclampsia. Please consult a doctor!</string>
+    <string name="title_activity_about">About Petograph</string>
+    <string name="title_activity_calendar">Pregnancy Calendar</string>
+    <string name="title_activity_danger">Danger Signs</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_widget">BMI</string>
+    <string name="tools">Tools</string>
+    <string name="track_pregnancy">Track your Pregnancy from here</string>
+    <string name="try_next">Give it a try next time</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="unsafe_days">Unsafe days</string>
+    <string name="urgent">Urgent</string>
+    <string name="urine">Reduced or no urine production</string>
+    <string name="values_deleted">Values Deleted</string>
+    <string name="values_not_saved">Values not saved</string>
+    <string name="vision">Blurred Vision</string>
+    <string name="visionLoss">Sudden Loss of vision</string>
+    <string name="vital_signs">My Vital Signs</string>
+    <string name="vomiting">Excessive nausea and Vomiting</string>
+    <string name="warnings">Measure BP with Sphygmomanometer</string>
+    <string name="website">Website</string>
+    <string name="web_link">info@globalpreeclampsia.org</string>
+    <string name="weeks">weeks</string>
+    <string name="weight">Weight</string>
+    <string name="weightHint">Weight(kg)</string>
+    <string name="woa">Weeks of Amenhorrea</string>
+    <string name="yet_to_come">This date is yet to come</string>
+    <string name="you_are">You are</string>
+    <string name="abc_font_family_body_1_material">sans-serif</string>
+    <string name="abc_font_family_body_2_material">sans-serif-medium</string>
+    <string name="abc_font_family_button_material">sans-serif-medium</string>
+    <string name="abc_font_family_caption_material">sans-serif</string>
+    <string name="abc_font_family_display_1_material">sans-serif</string>
+    <string name="abc_font_family_display_2_material">sans-serif</string>
+    <string name="abc_font_family_display_3_material">sans-serif</string>
+    <string name="abc_font_family_display_4_material">sans-serif-light</string>
+    <string name="abc_font_family_headline_material">sans-serif</string>
+    <string name="abc_font_family_menu_material">sans-serif</string>
+    <string name="abc_font_family_subhead_material">sans-serif</string>
+    <string name="abc_font_family_title_material">sans-serif-medium</string>
+    <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="bottom_sheet_behavior">android.support.design.widget.BottomSheetBehavior</string>
+    <string name="character_counter_pattern">%1$d / %2$d</string>
+    <!--    <string name="next">Go to next</string>-->
+    <string name="password_toggle_content_description">Toggle password visibility</string>
+    <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
+    <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_eye_mask_visible">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="toolbar_title_bmi_calculator">BMI Calculator</string>
+    <string name="toolbar_title_pregnancy_age_calculator">Pregnancy Age Calculator</string>
+    <string name="toolbar_title_menstrual_cycle_monitor">Menstrual Cycle Monitor</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="settings_night_mode">Night Mode</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_private_account">Private Account</string>
+    <string name="settings_feed_back">Send FeedBack</string>
+    <string name="settings_about_us">About Us</string>
+    <string name="settings_faqs">FAQs</string>
+    <string name="settings_languages">Languages</string>
+    <string name="settings_exit_app">Exit</string>
+
+    <string name="bmi_value_null">0.00</string>
+
+    <string name="bmi_cat_severly_underweight">Severely Underweight</string>
+    <string name="bmi_cat_underweight">Underweight</string>
+    <string name="bmi_cat_normal">Normal</string>
+    <string name="bmi_cat_overweight">Overweight</string>
+    <string name="bmi_cat_severly_overweight">Severely Overweight</string>
+    <string name="bmi_cat_obese">Obese</string>
+    <string name="bmi_cat_severely_obese">Severely Obese</string>
+    <string name="select_last_normal_menstrual_period">Select Last Normal Menstrual Period</string>
+    <string name="safe_period">Safe Period</string>
+    <string name="un_safe_period">Un-Safe Period</string>
+    <string name="next_period_starts_on">Next Period Starts On</string>
+    <string name="body_mass_index">Body Mass Index</string>
+    <string name="systolic">Systolic</string>
+    <string name="diastolic">Diastolic</string>
+    <string name="pulse">Pulse</string>
+    <string name="last_normal_menstrual_period">Last Normal Menstrual Period</string>
+    <string name="last_normal_menestration_period">Last Normal Menestration Period</string>
+    <string name="pregnancy_age">Pregnancy Age</string>
+    <string name="expected_date_of_delivery">Expected Date Of Delivery</string>
+    <string name="bmi_calculator">BMI Calculator</string>
+    <string name="pregnancy_age_monitor">Pregnancy Age Monitor</string>
+    <string name="menstural_cycle_monitor">Menstural Cycle Monitor</string>
+    <string name="todo">TODO</string>
+    <string name="status">status</string>
+    <string name="communication">Communication</string>
+
+    <string name="notification_activity">NotificationView</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_danger_signs"
+            android:fontFamily="@font/ubuntu_r"
+            android:icon="@drawable/ic_menu_dangerous"
+            android:title="@string/menu_danger_signs" />
+        <item
+            android:id="@+id/nav_website"
+            android:fontFamily="@font/ubuntu_r"
+            android:icon="@drawable/ic_menu_globe"
+            android:title="@string/menu_website" />
+        <item
+            android:id="@+id/nav_settings"
+            android:fontFamily="@font/ubuntu_r"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/menu_settings" />
+    </group>
+
+    <item android:title="@string/communication">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:fontFamily="@font/ubuntu_r"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_share" />
+            <item
+                android:id="@+id/nav_about"
+                android:fontFamily="@font/ubuntu_r"
+                android:icon="@drawable/ic_menu_info"
+                android:title="@string/menu_about" />
+        </menu>
+    </item>
+</menu>

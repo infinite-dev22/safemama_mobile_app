@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/pink_500"
+        android:elevation="4dp"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        tools:context=".AddCheckupRecordActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/systolic_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="5dp"
+                        android:fontFamily="@font/ubuntu_r"
+                        android:hint="@string/systolic"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/diastolic_input" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/diastolic_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="5dp"
+                        android:fontFamily="@font/ubuntu_r"
+                        android:hint="@string/diastolic"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/pulse_input" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pulse_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="5dp"
+                        android:fontFamily="@font/ubuntu_r"
+                        android:hint="@string/pulse"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/lnmp_input" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="5dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/lnmp_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="30dp"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:layout_marginEnd="5dp"
+                        android:drawableEnd="@drawable/ic_calendar"
+                        android:fontFamily="@font/ubuntu_r"
+                        android:hint="@string/last_normal_menstrual_period"
+                        android:inputType="date" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/cancelBtn"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="190dp"
+                        android:layout_height="60dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="@color/red"
+                        android:fontFamily="@font/ubuntu_r"
+                        android:text="@string/btn_cancel"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/submitBtn"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="190dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="10dp"
+                        android:backgroundTint="@color/green"
+                        android:fontFamily="@font/ubuntu_r"
+                        android:text="@string/btn_submit"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</RelativeLayout>

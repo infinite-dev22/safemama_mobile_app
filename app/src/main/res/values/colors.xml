@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="pink_500">#f26492</color>
+    <color name="pink_700">#e42d80</color>
+    <color name="pink_200">#fbbd94</color>
+    <color name="teal_700">#f59388</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#F45D5D</color>
+    <color name="green">#0ca20c</color>
+    <color name="pink">#ffed3086</color>
+    <color name="materialGrey">#fff5f5f5</color>
+    <color name="status_bar">#E38A80</color>
+
+    <color name="primary">#141419</color>
+    <color name="secondary">#25282b</color>
+
+    <color name="night_mode">#6124b1</color>
+    <color name="notifications">#13b2c3</color>
+    <color name="private_account">#e5a326</color>
+    <color name="security">#d95f69</color>
+
+    <color name="bmi_color_severly_underweight">#00a5ac</color>
+    <color name="bmi_color_underweight">#00c975</color>
+    <color name="bmi_color_normal">#61e24f</color>
+    <color name="bmi_color_overweight">#7acf48</color>
+    <color name="bmi_color_severly_overweight">#d4671d</color>
+    <color name="bmi_color_obese">#f22900</color>
+    <color name="bmi_color_severely_obese">#ff0000</color>
+</resources>
