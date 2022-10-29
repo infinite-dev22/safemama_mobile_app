@@ -66,7 +66,7 @@
     <string name="danger">Danger Signs</string>
     <string name="data_cleared">Data Cleared, Restart the App</string>
     <string name="data_saved">Data saved</string>
-    <string name="date">Date</string>
+    <string name="date">Date Recorded</string>
     <string name="days">days</string>
     <string name="diarrhoea">Diarrhoea</string>
     <string name="dizziness">Dizziness</string>
@@ -157,7 +157,7 @@
     <string name="values_not_saved">Values not saved</string>
     <string name="vision">Blurred Vision</string>
     <string name="visionLoss">Sudden Loss of vision</string>
-    <string name="vital_signs">My Vital Signs</string>
+    <string name="vital_signs">*My Vital Signs*</string>
     <string name="vomiting">Excessive nausea and Vomiting</string>
     <string name="warnings">Measure BP with Sphygmomanometer</string>
     <string name="website">Website</string>

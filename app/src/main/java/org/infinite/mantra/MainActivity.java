@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             int i = dbList.size() - 1;
             Intent sendIntent = new Intent();
             sendIntent.setAction("android.intent.action.SEND");
-            sendIntent.putExtra("android.intent.extra.TEXT", getString(R.string.vital_signs) + ": " + getString(R.string.blood_pressure) + ": *" + dbList.get(i).getSystolic() + "/" + dbList.get(i).getDiastolic() + "* " + getString(R.string.Pulse) + ": *" + dbList.get(i).getPulseRate() + "* " + getString(R.string.lnmp) + ": *" + dbList.get(i).getLnmp() + "* " + getString(R.string.date) + ":" + dbList.get(i).getDateMeasured() + " " + dbList.get(i).getTimeMeasured() + " https://play.google.com/store/apps/details?id=petograph.scriptfloor.com.petograph&hl=en");
+            sendIntent.putExtra("android.intent.extra.TEXT", getString(R.string.vital_signs) + "\n\t*_" + getString(R.string.blood_pressure) + ":_* " + dbList.get(i).getSystolic() + "/" + dbList.get(i).getDiastolic() + "\n\t*_" + getString(R.string.Pulse) + ":_* " + dbList.get(i).getPulseRate() + "\n\t*_" + getString(R.string.lnmp) + ":_* " + dbList.get(i).getLnmp() + "\n\t*_" + getString(R.string.date) + ":_* " + dbList.get(i).getDateMeasured() + " " + dbList.get(i).getTimeMeasured() + "\n\thttps://play.google.com/store/apps/details?id=petograph.scriptfloor.com.petograph&hl=en");
             sendIntent.setType("text/plain");
             startActivity(Intent.createChooser(sendIntent, getString(R.string.share) + " " + getString(R.string.vital_signs)));
         } catch (Exception e) {

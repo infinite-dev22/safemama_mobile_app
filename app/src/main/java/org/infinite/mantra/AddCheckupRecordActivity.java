@@ -78,7 +78,6 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
         cancelBtn = findViewById(R.id.cancelBtn);
         dao = new PetographDAO(getApplicationContext());
         dbList = new ArrayList<>();
-        dbList = dao.getDataFromDB();
         alertBuilder = new AlertDialog.Builder(this);
 
         // now create instance of the material date picker
@@ -274,11 +273,13 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
     }
 
     public void checkForPreeclampsiaPossibility() {
+        dbList = dao.getDataFromDB();
         if (dbList.size() != 0) {
             curValue = dbList.size() - 1;
             String systolic = dbList.get(curValue).getSystolic();
             String diastolic = dbList.get(curValue).getDiastolic();
             String lnmp = dbList.get(curValue).getLnmp();
+            System.out.println(dbList.get(curValue).getDateMeasured() + ", " + dbList.get(curValue).getTimeMeasured());
             int pregnancy = calcWoa(lnmp);
             lnmpTextInput.setText(lnmp);
 
@@ -301,6 +302,7 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
     }
 
     private void setData() {
+        dbList = dao.getDataFromDB();
         if (dbList.size() != 0) {
             curValue = dbList.size() - 1;
             String lnmp = dbList.get(curValue).getLnmp();
