@@ -29,12 +29,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
                 app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
-                android:foreground="?android:attr/selectableItemBackground"
                 app:layout_row="0"
                 app:layout_rowWeight="1">
 
@@ -49,8 +49,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:src="@mipmap/ic_bmi_png"
-                        android:contentDescription="@string/todo" />
+                        android:contentDescription="@string/todo"
+                        android:src="@mipmap/ic_bmi_png" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -64,9 +64,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
-                android:foreground="?android:attr/selectableItemBackground"
                 app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
@@ -84,8 +84,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:src="@mipmap/ic_pregnancy_calender_png"
-                        android:contentDescription="@string/todo" />
+                        android:contentDescription="@string/todo"
+                        android:src="@mipmap/ic_pregnancy_calender_png" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -99,8 +99,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardCornerRadius="20dp"
                 android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="8dp"
                 app:layout_column="0"
                 app:layout_columnWeight="1"
@@ -119,8 +119,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:src="@mipmap/ic_menstraual_calender_png"
-                        android:contentDescription="@string/todo" />
+                        android:contentDescription="@string/todo"
+                        android:src="@mipmap/ic_menstraual_calender_png" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -129,39 +129,40 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="8dp"-->
-<!--                app:cardCornerRadius="20dp"-->
-<!--                app:cardElevation="8dp"-->
-<!--                app:layout_column="1"-->
-<!--                app:layout_columnWeight="1"-->
-<!--                app:layout_gravity="fill"-->
-<!--                app:layout_row="1"-->
-<!--                app:layout_rowWeight="1">-->
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_margin="8dp"-->
+            <!--                app:cardCornerRadius="20dp"-->
+            <!--                app:cardElevation="8dp"-->
+            <!--                app:layout_column="1"-->
+            <!--                app:layout_columnWeight="1"-->
+            <!--                app:layout_gravity="fill"-->
+            <!--                app:layout_row="1"-->
+            <!--                app:layout_rowWeight="1">-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center_vertical|center_horizontal"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="vertical">-->
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_gravity="center_vertical|center_horizontal"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:orientation="vertical">-->
 
-<!--                    <ImageView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:src="@drawable/ic_notification" />-->
+            <!--                    <ImageView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="10dp"-->
+            <!--                        android:src="@drawable/ic_notification" />-->
 
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="Notifications" />-->
-<!--                </LinearLayout>-->
-<!--            </androidx.cardview.widget.CardView>-->
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="Notifications" />-->
+            <!--                </LinearLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
         </androidx.gridlayout.widget.GridLayout>
     </LinearLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_record_fab"
         android:layout_width="wrap_content"

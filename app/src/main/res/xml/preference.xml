@@ -7,32 +7,32 @@
 
         <SwitchPreferenceCompat
             android:defaultValue="false"
-            android:icon="@mipmap/ic_night_mode_png"
             android:key="night_mode"
-            android:title="@string/settings_night_mode" />
+            android:title="@string/settings_night_mode"
+            android:icon="@mipmap/ic_night_mode_png" />
         <SwitchPreferenceCompat
             android:defaultValue="false"
-            android:icon="@mipmap/ic_notification_png"
             android:key="notifications"
-            android:title="@string/settings_notifications" />
+            android:title="@string/settings_notifications"
+            android:icon="@mipmap/ic_notification_png" />
     </PreferenceCategory>
 
     <PreferenceCategory app:allowDividerBelow="true">
         <Preference
-            android:icon="@mipmap/ic_feed_back_png"
-            android:title="@string/settings_feed_back">
+            android:title="@string/settings_feed_back"
+            android:icon="@mipmap/ic_feed_back_png">
             <intent
                 android:action="android.intent.action.SENDTO"
                 android:data="mailto:info@globalpreecclampsia.org" />
         </Preference>
         <Preference
-            android:icon="@mipmap/ic_info_png"
-            android:title="@string/settings_about_us">
+            android:title="@string/settings_about_us"
+            android:icon="@mipmap/ic_info_png">
             <intent android:targetClass="org.infinite.mantra.AboutActivity" />
         </Preference>
         <Preference
-            android:icon="@mipmap/ic_faqs_png"
-            android:title="@string/settings_faqs">
+            android:title="@string/settings_faqs"
+            android:icon="@mipmap/ic_faqs_png">
             <intent
                 android:action="android.intent.action.WEB_SEARCH"
                 android:data="http://https://globalpreeclampsia.org/blog" />
@@ -40,8 +40,8 @@
     </PreferenceCategory>
     <PreferenceCategory>
         <Preference
-            android:icon="@mipmap/ic_exit_png"
+            android:key="exit"
             android:title="@string/settings_exit_app"
-            android:key="exit"/>
+            android:icon="@mipmap/ic_exit_png" />
     </PreferenceCategory>
 </PreferenceScreen>

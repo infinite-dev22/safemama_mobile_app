@@ -2,6 +2,7 @@ package org.infinite.mantra;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,7 @@ import org.infinite.mantra.database.dao.PetographDAO;
 import org.infinite.mantra.database.model.PetographModel;
 import org.infinite.mantra.services.ValueChangeListener;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
 
@@ -110,8 +112,7 @@ public class MainActivity extends AppCompatActivity {
             sendIntent.setType("text/plain");
             startActivity(Intent.createChooser(sendIntent, getString(R.string.share) + " " + getString(R.string.vital_signs)));
         } catch (Exception e) {
-            Snackbar.make(findViewById(R.id.view_pager), R.string.errors, 0).setAction(R.string.cancel, null).show();
-            System.out.println(e.getMessage());
+            Snackbar.make(findViewById(R.id.view_pager), R.string.no_data_error, Snackbar.LENGTH_LONG).setAction(R.string.cancel, null).show();
         }
     }
 }

@@ -73,6 +73,7 @@ public class ChartsFragment extends Fragment {
         iLineDataSets.add(pulseDataSet);
 
         LineData lineData = new LineData(iLineDataSets);
+        lineChart.setNoDataText("Add vitals in check up screen to see graph data here");
         lineChart.setData(lineData);
         lineChart.invalidate();
 

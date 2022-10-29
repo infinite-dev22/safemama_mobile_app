@@ -82,6 +82,7 @@
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="errors">Some Errors occurred</string>
+    <string name="no_data_error">No vitals available to share, Add vitals in Checkup tab and try again</string>
     <string name="expect_on">Expect on</string>
     <string name="feb">February</string>
     <string name="fertility">Menstrual Calendar</string>

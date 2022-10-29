@@ -175,19 +175,6 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
             }
         });
 
-        //        lnmpTextInput.setOnTouchListener((v, event) -> {
-//            final int DRAWABLE_RIGHT = 2;
-//
-//            if (event.getAction() == MotionEvent.ACTION_UP) {
-//                if (event.getRawX() >= (lnmpTextInput.getRight() - lnmpTextInput.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-//
-//                    materialDatePicker.show(fragmentManager, "MATERIAL_DATE_PICKER");
-//                    return true;
-//                }
-//            }
-//            return false;
-//        });
-
         // now handle the positive button click from the
         // material design date picker
         materialDatePicker.addOnPositiveButtonClickListener((MaterialPickerOnPositiveButtonClickListener<? super Long>) selection -> {
