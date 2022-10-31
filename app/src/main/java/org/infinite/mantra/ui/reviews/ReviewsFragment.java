@@ -21,6 +21,11 @@ import org.infinite.mantra.database.model.PetographModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
+import smartdevelop.ir.eram.showcaseviewlib.config.PointerType;
+import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
+
 public class ReviewsFragment extends Fragment {
     RecyclerView recyclerView;
     RecyclerViewAdapter adapter;

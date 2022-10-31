@@ -1,15 +1,15 @@
 package org.infinite.mantra;
 
-import static com.google.android.material.internal.ContextUtils.getActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.RingtoneManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,7 +18,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.TaskStackBuilder;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.datepicker.MaterialDatePicker;
@@ -27,7 +26,6 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import org.infinite.mantra.database.dao.PetographDAO;
 import org.infinite.mantra.database.model.PetographModel;
-import org.infinite.mantra.ui.notification.NotificationActivity;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,6 +36,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.TimeZone;
+
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
+import smartdevelop.ir.eram.showcaseviewlib.config.PointerType;
+import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
 
 public class AddCheckupRecordActivity extends AppCompatActivity {
 
@@ -52,7 +55,8 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
     List<PetographModel> dbList;
     AlertDialog.Builder alertBuilder;
     MaterialDatePicker<Long> materialDatePicker;
-    int notificationID = 001;
+    int NOTIFICATION_ID = 001;
+    private static final String CHANNEL_ID = "Pre Eclampsia Warning";
 
     public AddCheckupRecordActivity() {
     }
@@ -88,72 +92,6 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
         materialDatePicker = MaterialDatePicker.Builder.datePicker().setTitleText("Select date").setSelection(MaterialDatePicker.todayInUtcMilliseconds()).build();
 
         setData();
-
-//        lnmpTextInput.addTextChangedListener(new TextWatcher() {
-//            private String current = "";
-//            private final Calendar calendar = Calendar.getInstance();
-//
-//            @Override
-//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//                if (!charSequence.toString().equals(current)) {
-//                    String clean = charSequence.toString().replaceAll("[^\\d.]", "");
-//                    String cleanC = current.replaceAll("[^\\d.]", "");
-//
-//                    int cl = clean.length();
-//                    int sel = cl;
-//                    for (int j = 2; j <= cl && j < 6; j += 2) {
-//                        sel++;
-//                    }
-//                    //Fix for pressing delete next to a forward slash
-//                    if (clean.equals(cleanC)) sel--;
-//
-//                    if (clean.length() <= 6) {
-//                        String ddmmyy = "ddmmyy";
-//                        clean = clean + ddmmyy.substring(clean.length());
-//                    } else {
-//                        //This part makes sure that when we finish entering numbers
-//                        //the date is correct, fixing it otherwise
-//                        int day = Integer.parseInt(clean.substring(0, 2));
-//                        int mon = Integer.parseInt(clean.substring(2, 4));
-//                        int year = Integer.parseInt(clean.substring(4, 6));
-//
-//                        if (mon > 12) mon = 12;
-//                        calendar.set(Calendar.MONTH, mon - 1);
-//                        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-//                        String yrStr = Integer.toString(currentYear).substring(2);
-//                        int simpleCurrentYear = Integer.parseInt(yrStr);
-//
-//                        year = (year < simpleCurrentYear - 2) ? simpleCurrentYear - 1 : Math.min(year, simpleCurrentYear);
-//                        calendar.set(Calendar.YEAR, year);
-//                        // ^ first set year for the line below to work correctly
-//                        //with leap years - otherwise, date e.g. 29/02/2012
-//                        //would be automatically corrected to 28/02/2012
-//
-//                        day = Math.min(day, calendar.getActualMaximum(Calendar.DATE));
-//                        clean = String.format("%02d%02d%02d", day, mon, year);
-//                    }
-//
-//                    clean = String.format("%s/%s/%s", clean.substring(0, 2),
-//                            clean.substring(2, 4),
-//                            clean.substring(4, 6));
-//
-//                    sel = Math.max(sel, 0);
-//                    current = clean;
-//                    lnmpTextInput.setText(current);
-//                    lnmpTextInput.setSelection(Math.min(sel, current.length()));
-//                }
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable editable) {
-//
-//            }
-//        });
 
         submitBtn.setOnClickListener(view -> {
             saveCheckupData();
@@ -279,24 +217,18 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
             String systolic = dbList.get(curValue).getSystolic();
             String diastolic = dbList.get(curValue).getDiastolic();
             String lnmp = dbList.get(curValue).getLnmp();
-            System.out.println(dbList.get(curValue).getDateMeasured() + ", " + dbList.get(curValue).getTimeMeasured());
             int pregnancy = calcWoa(lnmp);
             lnmpTextInput.setText(lnmp);
 
             if (pregnancy > 19 && pregnancy < 45) {
-                if (Integer.parseInt(systolic) > 139 && Integer.parseInt(diastolic) > 89) {
+                if (Integer.parseInt(systolic) > 140 || Integer.parseInt(diastolic) > 90) {
                     showNotification();
                     showAlert();
-                } else if (Integer.parseInt(diastolic) > 89) {
-                    showNotification();
-                    showAlert();
-                } else if (Integer.parseInt(systolic) > 139) {
-                    showNotification();
-                    showAlert();
+                } else {
+                    startActivity(new Intent(this, MainActivity.class));
                 }
-            } else if (Integer.parseInt(systolic) < 140) {
-                Integer.parseInt(diastolic);
-                showNotification();
+            } else {
+                startActivity(new Intent(this, MainActivity.class));
             }
         }
     }
@@ -340,31 +272,45 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
     }
 
     public final void showNotification() {
-        Intent notificationIntent = new Intent(this, NotificationActivity.class);
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), notificationIntent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Notification.Builder builder = new Notification.Builder(this);
-        builder.setSmallIcon(R.drawable.ic_stat_name)
-                .setContentTitle("Petograph")
-                .setContentText(getString(R.string.suspect))
-                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)).setContentIntent(pendingIntent);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-        Intent resultIntent = new Intent(this, MainActivity.class);
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        stackBuilder.addParentStack(AboutActivity.class);
-        stackBuilder.addNextIntent(resultIntent);
+        Notification notification;
 
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(notificationID, builder.build());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            notification = new Notification.Builder(this)
+                    .setSmallIcon(R.drawable.ic_stat_name)
+                    .setContentTitle("Petograph")
+                    .setContentText(getString(R.string.suspect))
+                    .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                    .setContentIntent(pendingIntent)
+                    .setAutoCancel(true)
+                    .setChannelId(CHANNEL_ID)
+                    .build();
+            notificationManager.createNotificationChannel(new NotificationChannel(CHANNEL_ID, "Pre Eclampsia Warning", NotificationManager.IMPORTANCE_HIGH));
+        } else {
+            notification = new Notification.Builder(this)
+                    .setSmallIcon(R.drawable.ic_stat_name)
+                    .setContentTitle("Petograph")
+                    .setContentText(getString(R.string.suspect))
+                    .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                    .setContentIntent(pendingIntent)
+                    .setAutoCancel(true)
+                    .build();
+        }
+
+        notificationManager.notify(NOTIFICATION_ID, notification);
     }
 
     public final void showAlert() {
         alertBuilder.setMessage(R.string.suspect).setTitle(R.string.urgent);
-        alertBuilder.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.cancel();
-            }
+        alertBuilder.setNegativeButton("Ok", (dialog, id) -> {
+            dialog.cancel();
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
         });
 
         AlertDialog alertDialog = alertBuilder.create();

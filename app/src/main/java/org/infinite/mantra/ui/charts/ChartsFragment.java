@@ -14,6 +14,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.infinite.mantra.R;
 import org.infinite.mantra.database.dao.PetographDAO;
@@ -72,6 +73,11 @@ public class ChartsFragment extends Fragment {
         iLineDataSets.add(diastolicDataSet);
         iLineDataSets.add(pulseDataSet);
 
+        // SET CHART KEY COLORS
+        ((LineDataSet) iLineDataSets.get(0)).setColors(Color.BLUE);
+        ((LineDataSet) iLineDataSets.get(1)).setColors(Color.GREEN);
+        ((LineDataSet) iLineDataSets.get(2)).setColors(Color.RED);
+
         LineData lineData = new LineData(iLineDataSets);
         lineChart.setNoDataText("Add vitals in check up screen to see graph data here");
         lineChart.setData(lineData);
@@ -79,30 +85,27 @@ public class ChartsFragment extends Fragment {
 
         // Chart styling
         systolicDataSet.setColor(Color.BLUE);
-        systolicDataSet.setCircleColor(Color.BLUE);
         systolicDataSet.setDrawCircles(true);
+        systolicDataSet.setCircleColor(Color.BLUE);
         systolicDataSet.setDrawCircleHole(true);
         systolicDataSet.setLineWidth(2);
         systolicDataSet.setCircleRadius(5);
-        systolicDataSet.setCircleHoleRadius(5);
         systolicDataSet.setValueTextSize(10);
 
         diastolicDataSet.setColor(Color.GREEN);
-        diastolicDataSet.setCircleColor(Color.GREEN);
         diastolicDataSet.setDrawCircles(true);
+        diastolicDataSet.setCircleColor(Color.GREEN);
         diastolicDataSet.setDrawCircleHole(true);
         diastolicDataSet.setLineWidth(2);
         diastolicDataSet.setCircleRadius(5);
-        diastolicDataSet.setCircleHoleRadius(5);
         diastolicDataSet.setValueTextSize(10);
 
         pulseDataSet.setColor(Color.RED);
-        pulseDataSet.setCircleColor(Color.RED);
         pulseDataSet.setDrawCircles(true);
+        pulseDataSet.setCircleColor(Color.RED);
         pulseDataSet.setDrawCircleHole(true);
         pulseDataSet.setLineWidth(2);
         pulseDataSet.setCircleRadius(5);
-        pulseDataSet.setCircleHoleRadius(5);
         pulseDataSet.setValueTextSize(10);
     }
 

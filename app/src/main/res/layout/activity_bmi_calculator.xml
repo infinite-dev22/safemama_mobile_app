@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BmiCalculatorActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -11,31 +11,32 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/pink_500"
-        app:titleTextColor="@color/white"
         android:elevation="4dp"
         android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:titleTextColor="@color/white" />
 
     <RelativeLayout
         android:id="@+id/bmi_color"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/bmi_values_holder"
         android:layout_below="@id/toolbar"
-        android:layout_marginBottom="36dp">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="25dp">
 
         <LinearLayout
             android:id="@+id/bmi_results_show"
-            android:layout_width="100dp"
-            android:layout_height="170dp"
+            android:layout_width="wrap_content"
+            android:layout_height="255dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="80dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/round_background_bmi_results"
             android:gravity="center"
             android:orientation="vertical">
@@ -67,6 +68,37 @@
                 android:textColor="@color/white"
                 android:textSize="25sp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bmi_previous_values_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bmi_results_show"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/round_back_white_10_20"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/previous_bmi_value"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/previous_bmi_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="18sp" />
+        </LinearLayout>
     </RelativeLayout>
 
     <LinearLayout
@@ -74,7 +106,7 @@
         android:layout_width="match_parent"
         android:layout_height="74dp"
         android:layout_above="@+id/btn_calculate_bmi"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="15dp"
         android:orientation="horizontal">
 
         <RelativeLayout
@@ -90,7 +122,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/bmi_height"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:hint="@string/heightHint"
                     android:inputType="number"
                     android:maxLines="1"
@@ -105,7 +137,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/bmi_weight"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:hint="@string/weightHint"
                     android:inputType="number"
                     android:maxLines="1"
@@ -124,6 +156,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="19dp"
-        android:textAllCaps="false"
-        android:text="@string/btn_submit" />
+        android:text="@string/btn_submit"
+        android:textAllCaps="false" />
 </RelativeLayout>

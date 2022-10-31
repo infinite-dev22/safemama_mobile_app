@@ -1,6 +1,8 @@
 package org.infinite.mantra;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -8,15 +10,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import org.infinite.mantra.database.dao.PetographDAO;
+import org.infinite.mantra.database.model.PetographModel;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class BmiCalculatorActivity extends AppCompatActivity {
 
     TextInputEditText bmi_height_txt, bmi_weight_txt;
     Button bmi_calculate_btn;
-    TextView bmi_value_lbl, bmi_category_lbl;
+    TextView bmi_value_lbl, bmi_category_lbl, previous_bmi_value_lbl;
     float bmi_value_float;
-    String bmi_value;
+    String bmi_value, bmi_height, bmi_weight;
+    View focusView = null;
+    PetographDAO dao;
+    List<PetographModel> dbList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +36,7 @@ public class BmiCalculatorActivity extends AppCompatActivity {
         setActivityToolbar();
         initViews();
         clickActionEvents();
+        setData();
     }
 
     private void setActivityToolbar() {
@@ -40,6 +51,9 @@ public class BmiCalculatorActivity extends AppCompatActivity {
         bmi_height_txt = findViewById(R.id.bmi_height);
         bmi_weight_txt = findViewById(R.id.bmi_weight);
         bmi_calculate_btn = findViewById(R.id.btn_calculate_bmi);
+        dao = new PetographDAO(getApplicationContext());
+        dbList = new ArrayList<>();
+        previous_bmi_value_lbl = findViewById(R.id.previous_bmi_value);
     }
 
     private void clickActionEvents() {
@@ -54,6 +68,9 @@ public class BmiCalculatorActivity extends AppCompatActivity {
             bmi_value = String.format("%.2f", bmi_value_float);
             bmi_value_lbl.setText(bmi_value);
             setColors(bmi_value_float);
+
+            // SAVE BMI VALUES TO DATABASE
+            saveBMIData();
         });
     }
 
@@ -79,6 +96,52 @@ public class BmiCalculatorActivity extends AppCompatActivity {
         } else {
             bmi_category_lbl.setText(R.string.bmi_cat_severely_obese);
             bmi_category_lbl.setTextColor(getResources().getColor(R.color.bmi_color_severely_obese));
+        }
+    }
+
+    public boolean checkEmpty() {
+        bmi_height = Objects.requireNonNull(bmi_height_txt.getText()).toString();
+        bmi_weight = Objects.requireNonNull(bmi_weight_txt.getText()).toString();
+
+        if (TextUtils.isEmpty(bmi_height)) {
+            bmi_weight_txt.setError(getString(R.string.error_field_required));
+            focusView = bmi_height_txt;
+            return false;
+        } else if (TextUtils.isEmpty(bmi_weight)) {
+            bmi_weight_txt.setError(getString(R.string.error_field_required));
+            focusView = bmi_weight_txt;
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void saveBMIData() {
+        bmi_height = Objects.requireNonNull(bmi_height_txt.getText()).toString();
+        bmi_weight = Objects.requireNonNull(bmi_weight_txt.getText()).toString();
+
+        if (checkEmpty()) {
+            PetographModel dbModel = new PetographModel();
+
+            dbModel.setUserHeight(bmi_height);
+            dbModel.setUserWeight(bmi_weight);
+            dbModel.setBmi(bmi_value);
+
+            dao.insertBMI(bmi_height, bmi_weight, bmi_value);
+
+            bmi_height_txt.setText("");
+            bmi_weight_txt.setText("");
+        }
+    }
+
+    private void setData() {
+        dbList = dao.getBMIData();
+        if (dbList.size() != 0) {
+            int curValue = dbList.size() - 1;
+            String bmi = dbList.get(curValue).getBmi();
+            previous_bmi_value_lbl.setText(bmi);
+            setColors(Float.parseFloat(bmi));
+            System.out.println(bmi);
         }
     }
 

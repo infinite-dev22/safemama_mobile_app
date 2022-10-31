@@ -18,8 +18,8 @@ public class PetographDAO extends SQLiteOpenHelper {
     private static final String BMI_TABLE = "bmiTable";
     private static final String DATABASE_NAME = "vitalsDB";
     private static final int DATABASE_VERSION = 3;
-    private static final String INSERT_BMI = "CREATE TABLE IF NOT EXISTS bmiTable(height TEXT,weight TEXT,bmi TEXT)";
-    private static final String INSERT_VITAL = "CREATE TABLE IF NOT EXISTS vitalsTable(name TEXT, systolic TEXT,diastolic TEXT,dataDate TEXT,dataTime TEXT,pulse TEXT,lnmp TEXT)";
+    private static final String CREATE_BMI_TABLE = "CREATE TABLE IF NOT EXISTS bmiTable(height TEXT, weight TEXT, bmi TEXT)";
+    private static final String CREATE_VITALS_TABLE = "CREATE TABLE IF NOT EXISTS vitalsTable(name TEXT, systolic TEXT, diastolic TEXT, dataDate TEXT, dataTime TEXT, pulse TEXT, lnmp TEXT)";
     private static final String VITALS_TABLE = "vitalsTable";
     Context context;
 
@@ -30,8 +30,8 @@ public class PetographDAO extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(INSERT_VITAL);
-        sqLiteDatabase.execSQL(INSERT_BMI);
+        sqLiteDatabase.execSQL(CREATE_VITALS_TABLE);
+        sqLiteDatabase.execSQL(CREATE_BMI_TABLE);
     }
 
     @Override
@@ -54,20 +54,6 @@ public class PetographDAO extends SQLiteOpenHelper {
         db.close();
     }
 
-//    public void insertIntoDB(String systolicBP, String diastolicBP, String dateRecorded, String timeRecorded, String pulseRate, String lnmp) {
-//        System.out.println("Running DAO......!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-//        SQLiteDatabase db = getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        values.put("systolic", systolicBP);
-//        values.put("diastolic", diastolicBP);
-//        values.put("dataDate", dateRecorded);
-//        values.put("dataTime", timeRecorded);
-//        values.put("pulse", pulseRate);
-//        values.put("lnmp", lnmp);
-//        db.insert(VITALS_TABLE, null, values);
-//        db.close();
-//    }
-
     public void insertBMI(String height, String weight, String bmi) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -84,7 +70,7 @@ public class PetographDAO extends SQLiteOpenHelper {
         try {
             List<PetographModel> modelList2 = new ArrayList<>();
             try {
-                Cursor cursor = getWritableDatabase().rawQuery("select * from vitalsTable", null);
+                Cursor cursor = getWritableDatabase().rawQuery("select * from vitalsTable order by dataTime, dataDate desc", null);
                 if (cursor == null || !cursor.moveToFirst()) {
                     assert cursor != null;
                     cursor.close();
@@ -116,7 +102,7 @@ public class PetographDAO extends SQLiteOpenHelper {
         }
     }
 
-    public List<PetographModel> getDataBMI() {
+    public List<PetographModel> getBMIData() {
         Exception e;
         List<PetographModel> modelList = null;
         try {
@@ -132,7 +118,7 @@ public class PetographDAO extends SQLiteOpenHelper {
 
                     model.setUserHeight(cursor.getString(0));
                     model.setUserWeight(cursor.getString(1));
-                    model.setBmi(cursor.getString(1));
+                    model.setBmi(cursor.getString(2));
                     modelList2.add(model);
                 } while (cursor.moveToNext());
                 cursor.close();

@@ -1,6 +1,9 @@
 package org.infinite.mantra;
 
+import static org.infinite.mantra.ui.checkup.CheckupFragment.addRecordFAB;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -20,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_splash);
         this.handler.postDelayed(this.runnable, 3000);
-        new UserPreferenceFragment();
+
     }
 
     private void openMain() {

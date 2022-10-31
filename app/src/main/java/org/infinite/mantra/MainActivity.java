@@ -2,7 +2,6 @@ package org.infinite.mantra;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +19,6 @@ import org.infinite.mantra.database.dao.PetographDAO;
 import org.infinite.mantra.database.model.PetographModel;
 import org.infinite.mantra.services.ValueChangeListener;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
 

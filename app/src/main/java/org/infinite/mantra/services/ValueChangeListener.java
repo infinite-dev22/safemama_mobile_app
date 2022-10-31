@@ -15,7 +15,6 @@ public class ValueChangeListener extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         new ReviewsFragment();
-        new ChartsFragment();
         return START_STICKY;
     }
 
