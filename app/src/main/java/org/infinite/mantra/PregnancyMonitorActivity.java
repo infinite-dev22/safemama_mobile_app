@@ -45,43 +45,50 @@ public class PregnancyMonitorActivity extends AppCompatActivity {
 
     private void clickActionEvents() {
         pregnancy_age_calendar.setOnDateChangeListener((calendarView, year, month, dayOfMonth) -> {
-//                int current_year = Calendar.YEAR;
-//                int current_month = Calendar.MONTH;
-//                int current_day = Calendar.DAY_OF_MONTH;
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy", Locale.US);
             Calendar calendar1 = Calendar.getInstance();
             Calendar calendar2 = Calendar.getInstance();
 
             calendar1.set(year, month, dayOfMonth);
 
-//                calendar2.set(current_year, current_month, current_day);
             calendar2.set(year, month, dayOfMonth);
             calendar2.add(5, 7);
+
             if (calendar2.get(5) > calendar2.getMaximum(5)) {
                 calendar2.add(5, -calendar2.getMaximum(5));
                 calendar2.add(2, 10);
             } else {
                 calendar2.add(2, 9);
             }
+
             Date now = Calendar.getInstance().getTime();
             Date lnmp = calendar1.getTime();
+
             dateNow = now.getTime();
             dateLNMP = lnmp.getTime();
+
             dateNow -= dateLNMP;
             finalResult = (int) (dateNow / 86400000);
-            if (finalResult > cycleFinal && finalResult < 290) {
-                int weeks = (finalResult - cycleFinal) / 7;
-                int days = (finalResult - cycleFinal) % 7;
-                calendar_lnmp.setText(dateFormat.format(new Date(dateLNMP)));
-                calendar_pregnancy_age.setText(weeks + " " + getString(R.string.weeks) + " ," + days + " " + getString(R.string.days));
-                date_of_delivery.setText(dateFormat.format(calendar2.getTime()));
+
+            if (finalResult > 30) {
+                if (finalResult > cycleFinal && finalResult < 290) {
+                    int weeks = (finalResult - cycleFinal) / 7;
+                    int days = (finalResult - cycleFinal) % 7;
+                    calendar_lnmp.setText(dateFormat.format(new Date(dateLNMP)));
+                    calendar_pregnancy_age.setText(weeks + " " + getString(R.string.weeks) + ", " + days + " " + getString(R.string.days));
+                    date_of_delivery.setText(dateFormat.format(calendar2.getTime()));
+                } else {
+                    date_of_delivery.setText(getString(R.string.not_pregnant));
+                    calendar_pregnancy_age.setText(getString(R.string.try_next));
+                    calendar_lnmp.setText(dateFormat.format(calendar1.getTime()));
+                }
             } else if (dateNow < 0) {
                 date_of_delivery.setText(getString(R.string.yet_to_come));
                 calendar_pregnancy_age.setText(getString(R.string.enter_date));
                 calendar_lnmp.setText(dateFormat.format(calendar1.getTime()));
             } else {
-                date_of_delivery.setText(getString(R.string.not_pregnant));
-                calendar_pregnancy_age.setText(getString(R.string.try_next));
+                date_of_delivery.setText("");
+                calendar_pregnancy_age.setText(getString(R.string.not_yet_pregnant));
                 calendar_lnmp.setText(dateFormat.format(calendar1.getTime()));
             }
 

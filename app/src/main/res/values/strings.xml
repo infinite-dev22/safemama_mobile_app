@@ -230,12 +230,15 @@
     <string name="pregnancy_age">Pregnancy Age</string>
     <string name="expected_date_of_delivery">Expected Date Of Delivery</string>
     <string name="bmi_calculator">BMI Calculator</string>
-    <string name="pregnancy_age_monitor">Pregnancy Age Monitor</string>
-    <string name="menstural_cycle_monitor">Menstural Cycle Monitor</string>
+    <string name="pregnancy_age_monitor">Pregnancy Age</string>
+    <string name="menstural_cycle_monitor">Menstural Cycle</string>
     <string name="todo">TODO</string>
     <string name="status">status</string>
     <string name="communication">Communication</string>
 
     <string name="notification_activity">NotificationView</string>
     <string name="previous_bmi_value">Previous BMI Value:</string>
+    <string name="pre_eclampsia_management">Add Vitals</string>
+
+    <string name="not_yet_pregnant">Lets wait a little longer and try again</string>
 </resources>

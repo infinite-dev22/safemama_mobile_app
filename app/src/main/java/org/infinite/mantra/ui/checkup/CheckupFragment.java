@@ -33,7 +33,7 @@ public class CheckupFragment extends Fragment {
 
     public static FloatingActionButton addRecordFAB;
     View checkUpView;
-    CardView bmi, pregnancy, menstrual;
+    CardView bmi, pregnancy, menstrual, preeclampsia;
     String PREFERENCE_NAME = "PetographData";
 
     @Override
@@ -49,6 +49,7 @@ public class CheckupFragment extends Fragment {
         bmi = checkUpView.findViewById(R.id.bmi_calculator);
         pregnancy = checkUpView.findViewById(R.id.pregnancy_age_monitor);
         menstrual = checkUpView.findViewById(R.id.menstrual_monitor);
+        preeclampsia = checkUpView.findViewById(R.id.add_record_cardview);
     }
 
     private void clickActionEvents() {
@@ -59,6 +60,8 @@ public class CheckupFragment extends Fragment {
         pregnancy.setOnClickListener(view -> startActivity(new Intent(getActivity(), PregnancyMonitorActivity.class)));
 
         menstrual.setOnClickListener(view -> startActivity(new Intent(getActivity(), MenstrualMonitorActivity.class)));
+
+        preeclampsia.setOnClickListener(view -> startActivity(new Intent(getActivity(), AddCheckupRecordActivity.class)));
     }
 
     public void showIntro(String title, String text, View view) {
@@ -75,6 +78,9 @@ public class CheckupFragment extends Fragment {
                             break;
                         case R.id.pregnancy_age_monitor:
                             showIntro("Menstrual cycle monitor", "Keep track of your period cycle here.", checkUpView.findViewById(R.id.menstrual_monitor));
+                            break;
+                        case R.id.menstrual_monitor:
+                            showIntro("Pre Eclampsia Management", "Add your vitals here to check for Pre-eclampsia.", checkUpView.findViewById(R.id.add_record_cardview));
                             break;
                     }
                 }).build().show();

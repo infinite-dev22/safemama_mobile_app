@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/checkup_fragment"
@@ -12,9 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="403dp"
         android:layout_above="@+id/add_record_fab"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="70dp"
         android:layout_marginBottom="119dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/add_record_fab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.gridlayout.widget.GridLayout
             android:id="@+id/grid_layout"
@@ -49,12 +53,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:contentDescription="@string/todo"
-                        android:src="@mipmap/ic_bmi_png" />
+                        android:src="@drawable/ic_bmi_foreground" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/bmi_calculator" />
+                        android:text="@string/bmi_calculator"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -84,12 +89,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:contentDescription="@string/todo"
-                        android:src="@mipmap/ic_pregnancy_calender_png" />
+                        android:src="@drawable/ic_pregnancy_calendar_foreground" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/pregnancy_age_monitor" />
+                        android:text="@string/pregnancy_age_monitor"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -119,46 +125,51 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:contentDescription="@string/todo"
-                        android:src="@mipmap/ic_menstraual_calender_png" />
+                        android:src="@drawable/ic_menstrual_calendar_foreground" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/menstural_cycle_monitor" />
+                        android:text="@string/menstural_cycle_monitor"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!--            <androidx.cardview.widget.CardView-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_margin="8dp"-->
-            <!--                app:cardCornerRadius="20dp"-->
-            <!--                app:cardElevation="8dp"-->
-            <!--                app:layout_column="1"-->
-            <!--                app:layout_columnWeight="1"-->
-            <!--                app:layout_gravity="fill"-->
-            <!--                app:layout_row="1"-->
-            <!--                app:layout_rowWeight="1">-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/add_record_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:layout_column="1"
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill"
+                app:layout_row="1"
+                app:layout_rowWeight="1">
 
-            <!--                <LinearLayout-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_gravity="center_vertical|center_horizontal"-->
-            <!--                    android:gravity="center"-->
-            <!--                    android:orientation="vertical">-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-            <!--                    <ImageView-->
-            <!--                        android:layout_width="wrap_content"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:layout_marginTop="10dp"-->
-            <!--                        android:src="@drawable/ic_notification" />-->
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_doctor_foreground" />
 
-            <!--                    <TextView-->
-            <!--                        android:layout_width="wrap_content"-->
-            <!--                        android:layout_height="wrap_content"-->
-            <!--                        android:text="Notifications" />-->
-            <!--                </LinearLayout>-->
-            <!--            </androidx.cardview.widget.CardView>-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pre_eclampsia_management"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </androidx.gridlayout.widget.GridLayout>
     </LinearLayout>
 
@@ -176,8 +187,10 @@
         android:src="@drawable/ic_fab_plus"
         app:elevation="7dp"
         app:hoveredFocusedTranslationZ="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:pressedTranslationZ="8dp"
         app:tint="@android:color/white"
         tools:ignore="ImageContrastCheck" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

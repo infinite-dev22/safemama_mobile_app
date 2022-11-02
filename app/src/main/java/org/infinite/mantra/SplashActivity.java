@@ -22,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_splash);
-        this.handler.postDelayed(this.runnable, 3000);
+        this.handler.postDelayed(this.runnable, 2000);
 
     }
 
