@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 
@@ -58,6 +60,7 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
     MaterialDatePicker<Long> materialDatePicker;
     int NOTIFICATION_ID = 001;
     private static final String CHANNEL_ID = "Pre Eclampsia Warning";
+    String PREFERENCE_NAME = "PetographData";
 
     public AddCheckupRecordActivity() {
     }
@@ -224,7 +227,7 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
 
             if (pregnancy > 19 && pregnancy < 45) {
                 if (Integer.parseInt(systolic) > 140 || Integer.parseInt(diastolic) > 90) {
-                    showNotification();
+                    getStoredPreferences();
                     showAlert();
                 } else {
                     startActivity(new Intent(this, MainActivity.class));
@@ -317,5 +320,14 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
 
         AlertDialog alertDialog = alertBuilder.create();
         alertDialog.show();
+    }
+
+    public void getStoredPreferences() {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
+
+        boolean notify = sharedPreferences.getBoolean("notify_user", true);
+        if (notify) {
+            showNotification();
+        }
     }
 }

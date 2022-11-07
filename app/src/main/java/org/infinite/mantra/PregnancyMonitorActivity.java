@@ -70,7 +70,7 @@ public class PregnancyMonitorActivity extends AppCompatActivity {
             dateNow -= dateLNMP;
             finalResult = (int) (dateNow / 86400000);
 
-            if (finalResult > 30) {
+            if (finalResult > 35) {
                 if (finalResult > cycleFinal && finalResult < 290) {
                     int weeks = (finalResult - cycleFinal) / 7;
                     int days = (finalResult - cycleFinal) % 7;

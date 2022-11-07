@@ -217,7 +217,7 @@
     <string name="bmi_cat_severly_overweight">Severely Overweight</string>
     <string name="bmi_cat_obese">Obese</string>
     <string name="bmi_cat_severely_obese">Severely Obese</string>
-    <string name="select_last_normal_menstrual_period">Select Last Normal Menstrual Period</string>
+    <string name="select_last_normal_menstrual_period">Select First Day Of Last Normal Menstrual Period</string>
     <string name="safe_period">Safe Period</string>
     <string name="un_safe_period">Un-Safe Period</string>
     <string name="next_period_starts_on">Next Period Starts On</string>
@@ -241,4 +241,6 @@
     <string name="pre_eclampsia_management">Add Vitals</string>
 
     <string name="not_yet_pregnant">Lets wait a little longer and try again</string>
+
+    <bool name="notification_switch_default">true</bool>
 </resources>

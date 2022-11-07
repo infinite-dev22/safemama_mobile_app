@@ -1,7 +1,5 @@
 package org.infinite.mantra;
 
-import static org.infinite.mantra.ui.checkup.CheckupFragment.addRecordFAB;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,20 +8,29 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import org.infinite.mantra.ui.preferences.UserPreferenceFragment;
-
 public class SplashActivity extends AppCompatActivity {
 
     private final Handler handler = new Handler();
     private final Runnable runnable = SplashActivity.this::openMain;
+    String PREFERENCE_NAME = "PetographData";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_splash);
-        this.handler.postDelayed(this.runnable, 2000);
+        this.handler.postDelayed(this.runnable, 1500);
+        getStoredPreferences();
+    }
 
+    public void getStoredPreferences() {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
+
+        boolean dark_theme = sharedPreferences.getBoolean("night_mode", false);
+        if (dark_theme) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 
     private void openMain() {

@@ -3,38 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:key="preference_screen">
 
-    <PreferenceCategory app:allowDividerBelow="true">
-
+    <PreferenceCategory app:allowDividerBelow="false">
         <SwitchPreferenceCompat
             android:defaultValue="false"
+            android:icon="@drawable/ic_night_mode_png_round"
             android:key="night_mode"
             android:title="@string/settings_night_mode"
-            android:icon="@drawable/ic_night_mode_png_round" />
+            app:iconSpaceReserved="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:allowDividerBelow="true">
         <SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:defaultValue="@bool/notification_switch_default"
+            android:icon="@drawable/ic_notification_png_round"
             android:key="notifications"
             android:title="@string/settings_notifications"
-            android:icon="@drawable/ic_notification_png_round" />
+            app:iconSpaceReserved="true" />
     </PreferenceCategory>
 
     <PreferenceCategory app:allowDividerBelow="true">
         <Preference
-            android:title="@string/settings_feed_back"
-            android:icon="@drawable/ic_feed_back_png_round">
+            android:icon="@drawable/ic_feed_back_png_round"
+            android:title="@string/settings_feed_back">
             <intent
                 android:action="android.intent.action.SENDTO"
                 android:data="mailto:info@globalpreecclampsia.org" />
         </Preference>
         <Preference
-            android:title="@string/settings_about_us"
-            android:icon="@drawable/ic_info_png_round">
+            android:icon="@drawable/ic_info_png_round"
+            android:title="@string/settings_about_us">
             <intent
-                android:targetPackage="org.infinite.mantra"
-                android:targetClass="org.infinite.mantra.AboutActivity" />
+                android:targetClass="org.infinite.mantra.AboutActivity"
+                android:targetPackage="org.infinite.mantra" />
         </Preference>
         <Preference
-            android:title="@string/settings_faqs"
-            android:icon="@drawable/ic_faqs_png_round">
+            android:icon="@drawable/ic_faqs_png_round"
+            android:title="@string/settings_faqs">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://globalpreeclampsia.org/blog" />
@@ -42,8 +46,8 @@
     </PreferenceCategory>
     <PreferenceCategory>
         <Preference
+            android:icon="@drawable/ic_exit_png_round"
             android:key="exit"
-            android:title="@string/settings_exit_app"
-            android:icon="@drawable/ic_exit_png_round" />
+            android:title="@string/settings_exit_app" />
     </PreferenceCategory>
 </PreferenceScreen>
