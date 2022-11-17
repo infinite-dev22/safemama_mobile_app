@@ -15,5 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Petograph"
+rootProject.name = "SafeMama"
 include ':app'

@@ -2,8 +2,11 @@ package org.infinite.mantra;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -18,6 +21,8 @@ public class SplashActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        Window window = this.getWindow();
+        getWindow().setStatusBarColor(Color.parseColor("#FFFFFF"));
         this.handler.postDelayed(this.runnable, 1500);
         getStoredPreferences();
     }

@@ -8,7 +8,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/pink_500"
+        android:background="@color/app_green"
         android:elevation="4dp"
         android:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
         android:theme="@style/ThemeOverlay.AppCompat.Dark" />
