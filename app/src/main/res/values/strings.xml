@@ -23,13 +23,12 @@
     <string name="toolbar_title_danger_signs">Danger Signs</string>
     <string name="toolbar_title_add_record">Add Record</string>
 
-    <string name="large_text">"Petograph application enables early detection of pre-eclampsia and ensures timely referral to appropriate health care provider. For prompt intervention through effective management and efficient follow up.
+    <string name="large_text">"SafeMama is a Maternal Early Warning System (MEWS) tool that enables early detection of pre-eclampsia, monitors menstrual cycle, calculate pregnancy age and estimates Body Mass Index (BMI).
      "<u><b>Inventor</b></u>"
-         Suleiman Abubakar Tsamiya
-         Department of Obstetrics and Gynaecology
-         Kampala International University,
-         Western Campus, Uganda
-         suleiman.tsamiya@stud.kiu.ac.ug
+         Abubakar Suleiman Tsamiya
+         CEO/Co-founder
+         Global Pre-eclampsia Initiative
+         ceo@globalpreeclampsia.org
          tsamiyaonline@gmail.com
          +256-705265828
          +256-786359884
