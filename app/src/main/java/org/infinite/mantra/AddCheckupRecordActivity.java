@@ -226,9 +226,10 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
             lnmpTextInput.setText(lnmp);
 
             if (pregnancy > 19 && pregnancy < 45) {
-                if (Integer.parseInt(systolic) > 140 || Integer.parseInt(diastolic) > 90) {
+                if (Integer.parseInt(systolic) > 139 || Integer.parseInt(diastolic) > 89) {
                     getStoredPreferences();
                     showAlert();
+                    showNotification();
                 } else {
                     startActivity(new Intent(this, MainActivity.class));
                 }
