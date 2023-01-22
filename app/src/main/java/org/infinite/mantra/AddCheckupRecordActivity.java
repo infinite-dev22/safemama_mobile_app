@@ -58,7 +58,7 @@ public class AddCheckupRecordActivity extends AppCompatActivity {
     List<PetographModel> dbList;
     AlertDialog.Builder alertBuilder;
     MaterialDatePicker<Long> materialDatePicker;
-    int NOTIFICATION_ID = 001;
+    int NOTIFICATION_ID = 1;
     private static final String CHANNEL_ID = "Pre Eclampsia Warning";
     String PREFERENCE_NAME = "PetographData";
 

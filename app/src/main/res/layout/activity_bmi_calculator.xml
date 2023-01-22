@@ -19,158 +19,125 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@color/white" />
 
+    <LinearLayout
+        android:id="@+id/bmi_results_show"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/round_background_bmi_results"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/body_mass_index"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/bmi_value_lbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="@string/bmi_value_null"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/bmi_category_lbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:contentDescription="@string/_00">
+        android:layout_below="@+id/bmi_results_show"
+        android:layout_alignParentBottom="true">
 
         <LinearLayout
+            android:id="@+id/bmi_color"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/bmi_color"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/bmi_results_show"
-                    android:layout_width="238dp"
-                    android:layout_height="234dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="80dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginEnd="80dp"
-                    android:layout_marginBottom="50dp"
-                    android:background="@drawable/round_background_bmi_results"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/body_mass_index"
-                        android:textColor="@color/white"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/bmi_value_lbl"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:gravity="center"
-                        android:text="@string/bmi_value_null"
-                        android:textColor="@color/white"
-                        android:textSize="50sp" />
-
-                    <TextView
-                        android:id="@+id/bmi_category_lbl"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textSize="25sp" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <LinearLayout
-                android:id="@+id/bmi_previous_values_holder"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_back_white_10_20"
-                android:orientation="vertical"
-                android:paddingBottom="10dp">
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/previous_bmi_value"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:text="@string/previous_bmi_value"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/previous_bmi_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="5dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/bmi_values_holder"
+            <TextView
+                android:id="@+id/previous_bmi_value"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="18sp" />
 
-                <RelativeLayout
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/height_input_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bmi_height"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="5dp">
+                    android:hint="@string/heightHint"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="195dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/height_input_holder"
-                        android:layout_marginEnd="11dp"
-                        android:layout_alignParentStart="true">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/bmi_height"
-                            android:layout_width="match_parent"
-                            android:inputType="number"
-                            android:layout_height="match_parent"
-                            android:hint="@string/heightHint" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/weight_input_holder"
-                        android:layout_width="195dp"
-                        android:layout_toEndOf="@+id/height_input_holder"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="5dp">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/bmi_weight"
-                            android:layout_width="match_parent"
-                            android:inputType="number"
-                            android:layout_height="match_parent"
-                            android:hint="@string/weightHint" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </RelativeLayout>
-            </LinearLayout>
-
-            <RelativeLayout
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/weight_input_holder"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/height_input_holder"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
 
-                <Button
-                    android:id="@+id/btn_calculate_bmi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="19dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="19dp"
-                    android:text="@string/btn_submit"
-                    android:textAllCaps="false" />
-            </RelativeLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bmi_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/weightHint"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_calculate_bmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/btn_submit"
+                android:backgroundTint="@color/app_green"
+                android:textAllCaps="false" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

@@ -10,9 +10,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="403dp"
+        android:layout_height="350dp"
         android:layout_above="@+id/add_record_fab"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="200dp"
         android:layout_marginBottom="119dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/add_record_fab"
@@ -182,6 +182,8 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="20dp"
         android:clickable="true"
+        android:backgroundTint="@color/app_green"
+        app:backgroundTint="@color/app_green"
         android:contentDescription="@string/fab_transformation_scrim_behavior"
         android:focusable="true"
         android:src="@drawable/ic_fab_plus"

@@ -18,6 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         tools:context=".AddCheckupRecordActivity">
 
         <ScrollView
@@ -102,27 +106,27 @@
                         android:layout_height="75dp"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="30dp"
-                        android:focusable="false"
-                        android:clickable="true"
                         android:layout_marginEnd="5dp"
+                        android:clickable="true"
                         android:drawableEnd="@drawable/ic_calendar"
+                        android:focusable="false"
                         android:fontFamily="@font/ubuntu_r"
                         android:hint="@string/last_normal_menstrual_period"
                         android:inputType="date" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="40dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp">
 
                     <Button
                         android:id="@+id/cancelBtn"
                         style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="190dp"
-                        android:layout_height="60dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="5dp"
                         android:layout_marginEnd="10dp"
                         android:backgroundTint="@color/red"
                         android:fontFamily="@font/ubuntu_r"
@@ -133,16 +137,18 @@
                     <Button
                         android:id="@+id/submitBtn"
                         style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="190dp"
-                        android:layout_height="60dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
                         android:layout_marginStart="10dp"
-                        android:backgroundTint="@color/green"
+                        android:layout_marginEnd="5dp"
+                        android:backgroundTint="@color/app_green"
                         android:fontFamily="@font/ubuntu_r"
                         android:text="@string/btn_submit"
                         android:textAllCaps="false"
                         android:textColor="@color/white" />
 
-                </LinearLayout>
+                </RelativeLayout>
 
             </LinearLayout>
         </ScrollView>
